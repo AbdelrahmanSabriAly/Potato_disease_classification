@@ -7,3 +7,5 @@ backgroundColor = '#00563B' # Dark Blue
 secondaryBackgroundColor = '#9ACD32' # Lighter Blue
 
 textColor='#FFFFFF'
+
+textBackgroundColor = '#9ACD32'

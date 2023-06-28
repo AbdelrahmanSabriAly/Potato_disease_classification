@@ -38,7 +38,8 @@ about_tab.subheader("If a farmer can detect these diseses early and apply the ap
 about_tab.write("A convolutional neural network has been trained on Plant village dataset with an accuracy of 98.05%")
 about_tab.write("You can find the link of Plant village dataset in the following link")
 about_tab.markdown("[Dataset](https://www.kaggle.com/datasets/arjuntejaswi/plant-village)")
-
+about_tab.write("Link of GitHub repository:")
+about_tab.markdown("[GitHub Repo](https://github.com/AbdelrahmanSabriAly/Potato_disease_classification.git)")
 
 file = app_tab.file_uploader("Please upload an image of a potato leaf",type=["jpg","png","jpeg","bmp"])
 if file is None:
@@ -47,13 +48,18 @@ else:
     image = Image.open(file)
     app_tab.image(image,use_column_width=True)
     predictions = import_and_predict(image,model)
+    confidence = round(100*(np.max(predictions[0])),2)
     idx = np.argmax(predictions[0])
     if idx ==0:
         app_tab.info("This potato suffers from Early Blight")
+        app_tab.warning(f"Confidence: {confidence}%")
+        
     elif idx==1:
         app_tab.info("This potato suffers from Late Blight")
+        app_tab.warning(f"Confidence: {confidence}%")
     else:
         app_tab.success("This potato is Healthy")
+        app_tab.warning(f"Confidence: {confidence}%")
 
 
 contacts_tab.subheader("Abdelrahman Sabri Aly")
