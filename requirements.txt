@@ -3,4 +3,3 @@ opencv_python-headless==4.7.0.72
 Pillow==9.4.0
 streamlit==1.23.1
 tensorflow==2.12.0
-tensorflow_intel==2.12.0
