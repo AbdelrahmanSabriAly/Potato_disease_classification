@@ -4,6 +4,7 @@ import streamlit as st
 import cv2
 from PIL import Image,ImageOps
 import os
+from tensorflow.keras.models import load_model as tfk__load_model
 
 st.set_page_config(layout="wide",page_title="Potato disease detection")
 st.header("Potato Disease Classification")
@@ -24,7 +25,7 @@ def import_and_predict(image_data,mode):
     return prediction
 
 path = os.path.dirname(__file__)
-model = tf.keras.models.load_model(path+"\pretrained models\\Model1")
+model = tfk__load_model('model.h5')
 class_names = ['Early Blight', 'Late Blight', 'Healthy']
 
 
