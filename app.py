@@ -35,8 +35,8 @@ img = Image.open(("farmer.jpg"))
 about_tab.subheader("Farmers are facing a lot of economic losses every year due to varius dieases in corps. For potatos, there are two main types of diseases: Early Blight and Late Blight.")
 about_tab.image(img, caption='Farmer suffering losses due to corps diseases', use_column_width=True)
 about_tab.subheader("If a farmer can detect these diseses early and apply the appropriate treatment, It can prevent the econimic losses")
-about_tab.write("A convolutional neural network model for classifying potato diseases (Early Blight and Late Blight)")
-about_tab.write("You can find the link of the dataset in the following link")
+about_tab.write("A convolutional neural network has been trained on Plant village dataset with an accuracy of 98.05%")
+about_tab.write("You can find the link of Plant village dataset in the following link")
 about_tab.markdown("[Dataset](https://www.kaggle.com/datasets/arjuntejaswi/plant-village)")
 
 
