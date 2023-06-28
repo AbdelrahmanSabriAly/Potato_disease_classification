@@ -24,7 +24,7 @@ def import_and_predict(image_data,mode):
     return prediction
 
 path = os.path.dirname(__file__)
-model = tf.keras.models.load_model(path+"/pretrained models\\Model1")
+model = tf.keras.models.load_model(path+"\pretrained models\\Model1")
 class_names = ['Early Blight', 'Late Blight', 'Healthy']
 
 
