@@ -3,6 +3,7 @@ import numpy as np
 import streamlit as st
 import cv2
 from PIL import Image,ImageOps
+import os
 
 st.set_page_config(layout="wide",page_title="Potato disease detection")
 st.header("Potato Disease Classification")
@@ -22,7 +23,8 @@ def import_and_predict(image_data,mode):
     prediction = model.predict(img_reshape)
     return prediction
 
-model = tf.keras.models.load_model("pretrained models\\Model1")
+path = os.path.dirname(__file__)
+model = tf.keras.models.load_model(path+"/pretrained models\\Model1")
 class_names = ['Early Blight', 'Late Blight', 'Healthy']
 
 
